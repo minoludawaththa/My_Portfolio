@@ -60,7 +60,7 @@ const Hero = () => {
           <div className="order-2 lg:order-1 flex justify-center">
             <div className="w-80 h-80 md:w-100 md:h-140 rounded-full bg-linear-to-br from-blue-600 to-emerald-500 p-2">
               <img
-                src="ChatGPT Image Jan 4, 2026, 05_08_22 PM.png"
+                src="/profile.png"
                 className="w-full h-full rounded-full object-cover"
               />
             </div>

@@ -1,43 +1,13 @@
-import { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-
-  const [formStatus, setFormStatus] = useState({
-    submitted: false,
-    loading: false,
-    error: false,
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setFormStatus({ submitted: false, loading: true, error: false });
-
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setFormStatus({ submitted: true, loading: false, error: false });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1500);
-  };
+  const [state, handleSubmit] = useForm("mrebrpde");
 
   const socialLinks = [
     { label: 'GitHub', icon: '📦', href: 'https://github.com' },
     { label: 'LinkedIn', icon: '💼', href: 'https://linkedin.com' },
     { label: 'Twitter', icon: '🐦', href: 'https://twitter.com' },
-    { label: 'Email', icon: '✉️', href: 'mailto:udawaththaminol@gmail.com' },
+    { label: 'Email', icon: '✉️', href: 'mailto:your@email.com' },
   ];
 
   return (
@@ -75,10 +45,10 @@ const Contact = () => {
                 <div>
                   <h4 className="text-white font-semibold mb-1">Email</h4>
                   <a
-                    href="mailto:udawaththaminol@gmail.com"
+                    href="mailto:your@email.com"
                     className="text-emerald-400 hover:text-emerald-300"
                   >
-                    udawaththaminol@gmail.com
+                    your@email.com
                   </a>
                 </div>
               </div>
@@ -87,7 +57,7 @@ const Contact = () => {
                 <span className="text-3xl mr-4">📍</span>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Location</h4>
-                  <p className="text-gray-400">EMBILIPITIYA, SRI LANKA</p>
+                  <p className="text-gray-400">City, Country</p>
                 </div>
               </div>
             </div>
@@ -128,11 +98,15 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-2.5 md:py-3 bg-slate-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm md:text-base"
                   placeholder="Your name"
+                />
+                <ValidationError 
+                  prefix="Name" 
+                  field="name"
+                  errors={state.errors}
+                  className="text-red-400 text-sm mt-1"
                 />
               </div>
 
@@ -148,30 +122,15 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-2.5 md:py-3 bg-slate-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm md:text-base"
                   placeholder="your@email.com"
                 />
-              </div>
-
-              {/* Subject */}
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-white font-medium mb-2"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 md:py-3 bg-slate-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm md:text-base"
-                  placeholder="What's this about?"
+                <ValidationError 
+                  prefix="Email" 
+                  field="email"
+                  errors={state.errors}
+                  className="text-red-400 text-sm mt-1"
                 />
               </div>
 
@@ -186,33 +145,37 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   rows="5"
                   className="w-full px-4 py-2.5 md:py-3 bg-slate-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 resize-none text-sm md:text-base"
                   placeholder="Tell me about your project..."
+                />
+                <ValidationError 
+                  prefix="Message" 
+                  field="message"
+                  errors={state.errors}
+                  className="text-red-400 text-sm mt-1"
                 />
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={formStatus.loading}
+                disabled={state.submitting}
                 className="w-full px-8 py-4 bg-linear-to-r from-blue-600 to-emerald-500 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {formStatus.loading ? 'Sending...' : 'Send Message'}
+                {state.submitting ? 'Sending...' : 'Send Message'}
               </button>
 
               {/* Status Messages */}
-              {formStatus.submitted && (
+              {state.succeeded && (
                 <div className="text-center text-green-400">
                   ✅ Message sent successfully! I'll get back to you soon.
                 </div>
               )}
-              {formStatus.error && (
+              {state.errors && state.errors.length > 0 && (
                 <div className="text-center text-red-400">
-                  ❌ Something went wrong. Please try again.
+                  ❌ Failed to send message. Please try again.
                 </div>
               )}
             </form>

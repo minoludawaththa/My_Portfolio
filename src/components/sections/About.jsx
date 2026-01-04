@@ -38,7 +38,8 @@ const About = () => {
             {/* Resume CTA */}
             <div className="flex justify-center">
               <a
-                href="#"
+                href="/Minol_Udawaththa_Resume.pdf"
+                download
                 className="inline-flex items-center px-6 py-3 bg-linear-to-r from-blue-600 to-emerald-500 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
               >
                 Download Resume
