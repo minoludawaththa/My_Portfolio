@@ -1,13 +1,12 @@
 import { useForm, ValidationError } from '@formspree/react';
+import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
+
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("mrebrpde");
 
   const socialLinks = [
-    { label: 'GitHub', icon: '📦', href: 'https://github.com' },
-    { label: 'LinkedIn', icon: '💼', href: 'https://linkedin.com' },
-    { label: 'Twitter', icon: '🐦', href: 'https://twitter.com' },
-    { label: 'Email', icon: '✉️', href: 'mailto:udawaththaminol@gmail.com' },
+    
   ];
 
   return (
@@ -40,8 +39,8 @@ const Contact = () => {
 
             {/* Contact Details */}
             <div className="space-y-6">
-              <div className="flex items-start">
-                <span className="text-3xl mr-4">✉️</span>
+              <div className="flex items-start gap-6">
+                <FiMail className="text-2xl text-blue-400 " />
                 <div>
                   <h4 className="text-white font-semibold mb-1">Email</h4>
                   <a
@@ -53,34 +52,23 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start">
-                <span className="text-3xl mr-4">📍</span>
+              <div className="flex items-start gap-6">
+                <FiMapPin className="text-2xl text-blue-400 " />
                 <div>
                   <h4 className="text-white font-semibold mb-1">Location</h4>
                   <p className="text-gray-400">EMBILIPITIYA, SRI LANKA</p>
                 </div>
               </div>
-            </div>
 
-            {/* Social Links */}
-            <div>
-              <h4 className="text-white font-semibold mb-4">Connect With Me</h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-2xl hover:bg-blue-600 transition-colors"
-                    aria-label={social.label}
-                    title={social.label}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
+            <div className="flex items-start gap-6">
+                <FiPhone className="text-2xl text-blue-400 " />
+                <div>
+                  <h4 className="text-white font-semibold mb-1">Phone Number</h4>
+                  <a href="tel:+94779279114" className="text-gray-400">077 9279 114</a>
+                </div>
               </div>
             </div>
+            
           </div>
 
           {/* Contact Form */}

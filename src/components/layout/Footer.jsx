@@ -1,3 +1,5 @@
+import { FiGithub, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -10,11 +12,27 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { label: 'GitHub', icon: '📦 ', href: 'https://github.com' },
-    { label: 'LinkedIn', icon: '💼', href: 'https://linkedin.com' },
-    { label: 'Twitter', icon: '🐦', href: 'https://twitter.com' },
-    { label: 'Email', icon: '✉️', href: 'mailto:your@email.com' },
-  ];
+  {
+    label: "GitHub",
+    icon: <FiGithub className="text-xl text-blue-400" />,
+    href: "https://github.com/minoludawaththa",
+  },
+  {
+    label: "LinkedIn",
+    icon: <FiLinkedin className="text-xl text-blue-400" />,
+    href: "https://linkedin.com/in/minoludawaththa",
+  },
+  {
+    label: "Twitter",
+    icon: <FiTwitter className="text-xl text-blue-400" />,
+    href: "https://twitter.com/yourusername",
+  },
+  {
+    label: "Email",
+    icon: <FiMail className="text-xl text-blue-400" />,
+    href: "mailto:udawaththaminol@gmail.com",
+  },
+];
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -54,18 +72,16 @@ const Footer = () => {
           {/* Social Links */}
           <div>
             <h4 className="text-white font-semibold mb-4">Connect</h4>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
+            <div className="flex flex-col space-y-6">
+              {socialLinks.map((item, index) => (
                 <a
-                  key={social.label}
-                  href={social.href}
+                  key={index}
+                  href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-2xl hover:scale-110 transition-transform"
-                  aria-label={social.label}
-                  title={social.label}
-                >
-                  {social.icon}
+                  className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition">
+                  {item.icon}
+                  <span className="text-sm">{item.label}</span>
                 </a>
               ))}
             </div>

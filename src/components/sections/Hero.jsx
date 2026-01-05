@@ -101,36 +101,7 @@ const Hero = () => {
           </button>
         </div>
 
-            {/* Social Links */}
-            <div className="mt-12 flex justify-center lg:justify-start space-x-6">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white text-2xl transition-colors"
-                aria-label="GitHub"
-              >
-                📦
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white text-2xl transition-colors"
-                aria-label="LinkedIn"
-              >
-                💼
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white text-2xl transition-colors"
-                aria-label="Twitter"
-              >
-                🐦
-              </a>
-            </div>
+            
           </div>
         </div>
       </div>
