@@ -17,20 +17,22 @@ const About = () => {
               <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Who I Am</h3>
               <div className="space-y-3 md:space-y-4 text-gray-300 text-sm md:text-base">
                 <p>
-                  I'm a passionate developer with a keen eye for design and a love
-                  for creating seamless digital experiences. With over 5 years of
-                  experience, I've worked with startups and established companies
-                  to bring their visions to life.
+                  I’m Minol Udawaththa – Software & Web Developer, 
+                  and IT Undergraduate, currently pursuing a BSc (Hons) in Information Technology 
+                  Specializing in Information Technology at the Sri Lanka Institute of Information Technology (SLIIT).
                 </p>
                 <p>
-                  My approach combines technical expertise with creative
-                  problem-solving, ensuring that every project not only looks
-                  great but also performs flawlessly.
+                  I am a quick learner with strong creativity, problem-solving, teamwork, and leadership abilities,
+                   and I am passionate about advancing my career in software and web development, 
+                   exploring emerging technologies such as cloud computing and AI/ML.
+                   I am highly interested in exploring and using the latest technologies in software development, 
+                   including modern frameworks, tools, and best practices. I enjoy working across different areas such as web development, 
+                   backend systems, and emerging technologies, and I constantly try to improve my knowledge by learning new concepts and applying them in practical projects.
                 </p>
                 <p>
-                  When I'm not coding, you can find me exploring new technologies,
-                  contributing to open-source projects, or sharing knowledge with
-                  the developer community.
+                  My goal is to become a skilled Software Engineer who can design and build efficient, 
+                  scalable, and user-friendly applications. I enjoy working on real-world projects 
+                  that challenge me and help me grow both technically and professionally.
                 </p>
               </div>
             </div>

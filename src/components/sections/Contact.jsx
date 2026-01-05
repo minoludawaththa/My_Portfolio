@@ -7,7 +7,7 @@ const Contact = () => {
     { label: 'GitHub', icon: '📦', href: 'https://github.com' },
     { label: 'LinkedIn', icon: '💼', href: 'https://linkedin.com' },
     { label: 'Twitter', icon: '🐦', href: 'https://twitter.com' },
-    { label: 'Email', icon: '✉️', href: 'mailto:your@email.com' },
+    { label: 'Email', icon: '✉️', href: 'mailto:udawaththaminol@gmail.com' },
   ];
 
   return (
@@ -45,10 +45,10 @@ const Contact = () => {
                 <div>
                   <h4 className="text-white font-semibold mb-1">Email</h4>
                   <a
-                    href="mailto:your@email.com"
+                    href="mailto:udawaththaminol@gmail.com"
                     className="text-emerald-400 hover:text-emerald-300"
                   >
-                    your@email.com
+                    udawaththaminol@gmail.com
                   </a>
                 </div>
               </div>
@@ -57,7 +57,7 @@ const Contact = () => {
                 <span className="text-3xl mr-4">📍</span>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Location</h4>
-                  <p className="text-gray-400">City, Country</p>
+                  <p className="text-gray-400">EMBILIPITIYA, SRI LANKA</p>
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@ const Contact = () => {
                   name="email"
                   required
                   className="w-full px-4 py-2.5 md:py-3 bg-slate-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm md:text-base"
-                  placeholder="your@email.com"
+                  placeholder="your@gmail.com"
                 />
                 <ValidationError 
                   prefix="Email" 

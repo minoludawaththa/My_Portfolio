@@ -82,7 +82,7 @@ const Hero = () => {
 
             {/* Description */}
             <p className="text-lg sm:text-xl text-gray-300 mb-8">
-              I build modern, scalable web applications with a strong focus on usability, performance, and real-world impact.
+              I' m an IT Undergraduate passionate about building modern, scalable web applications and softaware solutions with a strong focus on usability, performance, and real-world impact.
             </p>
 
             {/* CTA Buttons */}
