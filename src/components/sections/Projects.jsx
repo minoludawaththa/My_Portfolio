@@ -4,7 +4,7 @@ import { projectsData } from '../../data/projects';
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const categories = ['All', 'Web Apps', 'Mobile', 'Design', 'Open Source'];
+  const categories = ['All', 'Web Apps', 'Mobile', 'Design'];
 
   const filteredProjects =
     activeFilter === 'All'
@@ -44,44 +44,26 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="group bg-slate-900 rounded-xl overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               {/* Project Image */}
-              <div className="relative h-40 md:h-48 bg-linear-to-br from-blue-600 to-emerald-500 overflow-hidden">
+              <div className="relative h-28 md:h-32 bg-linear-to-br from-blue-600 to-emerald-500 overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl">
                   {project.icon}
                 </div>
-                {/* Overlay on Hover */}
-                <div className="absolute inset-0 bg-slate-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                  >
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition-colors"
-                  >
-                    Code
-                  </a>
-                </div>
+                
               </div>
 
               {/* Project Info */}
-              <div className="p-6">
+              <div className="p-10 md:p-12">
                 <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                <p className="text-gray-400 text-sm mb-6">
                   {project.description}
                 </p>
 
